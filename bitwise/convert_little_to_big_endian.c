@@ -1,17 +1,24 @@
 #include <stdio.h>
 
 int main()
-
 {
-	unsigned int num = 0x1;
+	unsigned int num;
+	unsigned int b0,b1,b2,b3;
 
-	char *ptr = (char*)&num;
+	char * ptr = (char*)&num;
 
-	if (*ptr == 0x1)
-		printf("Machine is little endian\n");
-	else
-		printf("Machine is big endian\n");
+	printf("Enter number\n");
+	scanf("%x",&num);
 
+	b0 = (num & 0x000000FF) << 24;
+	b1 = (num & 0x0000FF00) << 8;
+        b2 = (num & 0xFF000000) >> 24;
+        b3 = (num & 0x00FF0000) >> 8;
 
-	return 0;
+	num = b0 | b1 | b2 | b3;
+
+	printf("num = %x\n",num);	
+
+	return 0;	
+
 }
