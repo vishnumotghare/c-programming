@@ -1,0 +1,16 @@
+<node>
+    <interface name="com.vishnu.Calculator">
+        <method name="add">
+            <arg name="num1" direction="in" type="i" />
+            <arg name="num2" direction="in" type="i" />
+            <arg name="ans" direction="out" type="i" />
+        </method>
+        <method name="sub">
+            <arg name="num1" direction="in" type="i" />
+            <arg name="num2" direction="in" type="i" />
+            <arg name="ans" direction="out" type="i" />
+        </method>
+    </interface>
+
+
+</node>
